@@ -7,4 +7,27 @@ body {
   font-family: Poppins, sans-serif, arial;
 }
 
+.nav-bar {
+  font-size: 1.5rem;
+  padding: 20px 40px;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-between;
+}
+.nav-bar a {
+  color: #000;
+  text-decoration: none;
+}
+.nav-bar ul {
+  margin: 0;
+  padding: 0;
+}
+.nav-bar ul li {
+  list-style: none;
+}
+.nav-bar span a:hover {
+  text-decoration: underline;
+}
+
 /*# sourceMappingURL=style.css.map */
