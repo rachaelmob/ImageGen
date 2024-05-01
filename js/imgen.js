@@ -1,10 +1,25 @@
 
 $(document).ready(function() {
 
+    let clientID = 'WAr4fQyV6XWOxWyhJfLVrgEePUlkBleA1jt_uEvtdvo';
+    let unsplashAuth = `https://api.unsplash.com/photos/random/?client_id=${clientID}`;
+
+    let $imgElm = $('#unsplash-img');
+    let $imgCreator = $('#img-creator');
+
     //Function for fetching images from Unsplash API
     function splashImgs() {
-        // Use AJAX or Fetch API to fetch images from Unsplash
-        // Display fetched images on the webpage
+        // Use Fetch API to fetch images from Unsplash
+        fetch(unsplashAuth)
+            .then(function (response) {
+                return response.json();
+            })
+            // Display fetched images and creator on the webpage
+            .then(function (jsonData) {
+                $imgElm.src = jsonData.urls.regular;
+                $imgCreator.innerText = jsonData.user.name;
+                $imgCreator.setAttribute("href", jsonData.user.portfolio_url);
+            });
     }
 
   // Listen for submission of email
