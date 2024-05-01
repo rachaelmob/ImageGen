@@ -1,0 +1,45 @@
+//=============================//
+//         MAIN PAGE 
+//=============================//
+
+#main {
+    padding-left: 20px;
+    padding-right: 20px;
+
+    h1 {
+        text-align: center;
+        margin-top: 50px;
+    }
+
+    //=============================//
+    //        IMAGE GENERATOR
+    //=============================//
+
+    .Generator {
+        margin-bottom: 30px;
+
+        .gen-btn {
+            text-align: center;
+        }
+    }
+
+    //=============================//
+    //          EMAIL FORMS
+    //=============================//
+    .forms-container {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+
+        .get-email, .email-collection { 
+            padding: 20px;
+            border: 2px solid #000;
+        }
+
+        .get-email {
+            margin-bottom: 20px;
+        }
+
+    }
+}

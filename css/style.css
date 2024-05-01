@@ -4,12 +4,8 @@
 
 body {
   font-size: 1rem;
+  overflow: hidden;
   font-family: Poppins, sans-serif, arial;
-}
-
-#main {
-  padding-left: 20px;
-  padding-right: 20px;
 }
 
 .nav-bar {
@@ -41,6 +37,34 @@ body {
 }
 .nav-bar span a:hover {
   text-decoration: underline;
+}
+
+#main {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+#main h1 {
+  text-align: center;
+  margin-top: 50px;
+}
+#main .Generator {
+  margin-bottom: 30px;
+}
+#main .Generator .gen-btn {
+  text-align: center;
+}
+#main .forms-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+}
+#main .forms-container .get-email, #main .forms-container .email-collection {
+  padding: 20px;
+  border: 2px solid #000;
+}
+#main .forms-container .get-email {
+  margin-bottom: 20px;
 }
 
 /*# sourceMappingURL=style.css.map */
