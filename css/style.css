@@ -52,6 +52,9 @@ body {
   align-items: center;
   flex-direction: column;
 }
+#main .Generator .gen-btn {
+  border: none;
+}
 #main .forms-container {
   display: flex;
   flex-wrap: wrap;
@@ -64,6 +67,12 @@ body {
 }
 #main .forms-container .get-email {
   margin-bottom: 20px;
+}
+#main .img-collection {
+  padding: 20px;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  border: 2px solid #000;
 }
 
 /*# sourceMappingURL=style.css.map */
