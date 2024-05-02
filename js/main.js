@@ -4,7 +4,7 @@ const $getEmail = $('#user_email');
 const $submitEmail = $('#submit_email');
 
 $(document).ready(function() {
-
+ fetchRandomPic();
 
 });
 
