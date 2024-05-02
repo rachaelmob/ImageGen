@@ -1,36 +1,45 @@
+//===========================================//
+//                 GET IMAGE 
+//===========================================//
 let $genImg = $('.gen-img');
-const $genBtn = $('.gen-btn');
-const $getEmail = $('#user_email');
-const $submitEmail = $('#submit_email');
+const $genBtn = $('#getRandom');
 
+// RANDOM PIC WHEN PAGE LOADS
 $(document).ready(function() {
- fetchRandomPic();
-
+    fetchRandomPic();
+});
+// RANDOM PIC ON GENERATOR BUTTON CLICK
+$genBtn.on('click', function(){
+    fetchRandomPic();
 });
 
-
-// Fetch Picsum  Function And Apply Img to SRC
+//FUNCTION FECTH PICSUM & ADD TO HTML 
 function fetchRandomPic() {
- fetch('https://picsum.photos/200/300')
+ fetch('https://picsum.photos/400/300')
     .then(response => {
         if (response.ok) {
             console.log('FETCH ACCEPTED')
         } else {
             console.log('FETCH DENIED')
         }
-        response.json()
+        // RETURN RANDOM IMG URL
+        return response.url;
     })
-    .then(data => console.log(data))
-
-
-
-
-
-
+    // USE DATA (RANDOM IMG URL) AND ADD IMG ELM WITH DATA AS THE SRC
+    .then(data => {
+        let imgURL = data;
+        $($genImg).html(`<img class="generated-img" src="${imgURL}">`);
+    })
 }
 
-// Get Email from user 
 
-// Validate Email 
+//===========================================//
+//                 EMAIL FORMS
+//===========================================//
+const $getEmail = $('#user_email');
+const $submitEmail = $('#submit_email');
 
-// Store Email locally inside drop menu 
+// VALIDATE EMAIL
+
+// GET EMAIL FROM USER AND STORE INTO SELECT MENU
+
