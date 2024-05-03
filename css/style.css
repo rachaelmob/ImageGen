@@ -39,8 +39,7 @@ body {
 }
 
 #main {
-  padding-left: 20px;
-  padding-right: 20px;
+  padding: 0 20px;
 }
 #main h1 {
   text-align: center;
@@ -51,6 +50,12 @@ body {
   margin-bottom: 30px;
   align-items: center;
   flex-direction: column;
+}
+#main .Generator .gen-img {
+  margin: 20px;
+}
+#main .Generator .gen-img img {
+  width: 100%;
 }
 #main .Generator .gen-btn {
   border: none;

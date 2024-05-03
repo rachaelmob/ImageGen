@@ -25,7 +25,7 @@ function fetchRandomPic() {
         // RETURN RANDOM IMG URL
         return response.url;
     })
-    // USE DATA (RANDOM IMG URL) AND ADD IMG ELM WITH DATA AS THE SRC
+    // USE DATA (RANDOM IMG URL) AND ADD IMG ELM WITH DATA AS THE SRC within the .gen-img div
     .then(data => {
         let imgURL = data;
         $($genImg).html(`<img class="generated-img" src="${imgURL}">`);
@@ -34,12 +34,34 @@ function fetchRandomPic() {
 
 
 //===========================================//
-//                 EMAIL FORMS
+//            GET & STORE EMAIL
 //===========================================//
-const $getEmail = $('#user_email');
+const $userEmail = $('#user_email');
 const $submitEmail = $('#submit_email');
+const $selectElm = $('#select_emails');
+
+const $emailVal = $userEmail.val();
+
+// GET EMAIL FROM USER AND STORE INTO SELECT MENU AS OPTION
+function addEmail() {
+// ==== DENY EMAIL IF IT EXSISTS & DISPLAY ERROR MESSAGE ====//
+    //-- loop through all select options and test them
+    for (let index = 0; index < $selectElm.option.length; index++) {
+        //-- if option's index value is the exact same as the email value
+        if ($selectElm.option[index].val() === $emailVal) {
+
+        }
+    }
+
+// ==== GET EMAIL IF IT DOES NOT EXIST ADD TO SELECT MENU ====//
+}
+
+// ON SUBMIT BUTTON CLICK RUN ADD EMAIL
+$submitEmail.on('click', function(){
+    addEmail();
+});
 
 // VALIDATE EMAIL
 
-// GET EMAIL FROM USER AND STORE INTO SELECT MENU
+
 
