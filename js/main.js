@@ -38,26 +38,37 @@ function fetchRandomPic() {
 //===========================================//
 const $userEmail = $('#user_email');
 const $submitEmail = $('#submit_email');
-const $selectElm = $('#select_emails');
+const $selectElm = $('select #select_emails');
 
 const $emailVal = $userEmail.val();
 
-// GET EMAIL FROM USER AND STORE INTO SELECT MENU AS OPTION
+// FUCNTION -> GET EMAIL FROM USER AND STORE INTO SELECT MENU AS OPTION
 function addEmail() {
 // ==== DENY EMAIL IF IT EXSISTS & DISPLAY ERROR MESSAGE ====//
     //-- loop through all select options and test them
-    for (let index = 0; index < $selectElm.option.length; index++) {
+    let allowed = true;
+    for (let index = 0; index < $selectElm.children().length; index++) {
         //-- if option's index value is the exact same as the email value
-        if ($selectElm.option[index].val() === $emailVal) {
-
+        if ($selectElm.children().eq(index).val() === $emailVal) {
+            allowed = false;
+            // break;
         }
     }
 
-// ==== GET EMAIL IF IT DOES NOT EXIST ADD TO SELECT MENU ====//
+    // ==== GET EMAIL IF IT DOES NOT EXIST AND ADD TO SELECT MENU ====//
+    if (allowed === true) {
+        // Accept Email and make new option Tag with value and text set to Email Value
+        let optionElm = document.createElement('option');
+        optionElm.text(`${$emailVal}`)
+        optionElm.attr('value', `${$emailVal}`)
+        // Add the new emails to the end of the Select list 
+        $selectElm.appendChild(optionElm);
+    }
+
 }
 
 // ON SUBMIT BUTTON CLICK RUN ADD EMAIL
-$submitEmail.on('click', function(){
+$submitEmail.on('click submit', function(){
     addEmail();
 });
 
