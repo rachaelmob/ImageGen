@@ -6,6 +6,19 @@ body {
   font-size: 1rem;
   font-family: Poppins, sans-serif, arial;
 }
+body button {
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #fff;
+  background-color: #000;
+}
+body button:hover {
+  color: #000;
+  cursor: pointer;
+  border: 1px solid #000;
+  background-color: #fff;
+}
 
 .nav-bar {
   color: #fff;
@@ -78,10 +91,15 @@ body {
 #main .forms-container .get-email, #main .forms-container .email-collection {
   padding: 20px;
   border: 2px solid #000;
+  display: flex;
+  flex-direction: column;
 }
-@media (min-width: 1038px) {
+#main .forms-container .get-email button, #main .forms-container .email-collection button {
+  margin-top: 15px;
+}
+@media (min-width: 868px) {
   #main .forms-container .get-email, #main .forms-container .email-collection {
-    min-width: 500px;
+    min-width: 400px;
   }
 }
 #main .forms-container .get-email {
