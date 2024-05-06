@@ -41,14 +41,25 @@
         flex-wrap: wrap;
         flex-direction: column;
         justify-content: center;
+        align-items: stretch;
+        align-content: center;
+
+        @media (min-width: 588px) {
+            flex-wrap: nowrap;
+            flex-direction: row;
+            justify-content: space-between;
+        }
 
         .get-email, .email-collection { 
             padding: 20px;
             border: 2px solid #000;
+
+            @media (min-width: 1038px){ min-width: 500px;}
         }
 
         .get-email {
             margin-bottom: 20px;
+            @media (min-width: 588px) { margin-bottom: 0px;}
         }
 
     }
