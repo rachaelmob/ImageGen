@@ -40,16 +40,15 @@ const userEmail = document.getElementById('user_email');
 const submitEmail = document.getElementById('submit_email');
 const selectElm = document.getElementById('select_emails');
 
-const emailVal = userEmail.value;
-
 // FUCNTION -> GET EMAIL FROM USER AND STORE INTO SELECT MENU AS OPTION
 function addEmail() {
 // ==== DENY EMAIL IF IT EXSISTS & DISPLAY ERROR MESSAGE ====//
     let allowed = true;
+    const emailVal = userEmail.value;
     const allEmails = selectElm.options;
     // Call and iterate through each email
     for (let index = 0; index < allEmails.length; index++) {
-        //-- if an email on the list is the exact same as the email input value
+        //-- if email exsists do not add 
         if (allEmails[index].value === emailVal) {
             allowed = false;
             break;
@@ -61,10 +60,7 @@ function addEmail() {
         let optionElm = document.createElement('option') ;
         optionElm.textContent = emailVal;
         optionElm.value = emailVal;
-        // optionElm.setAttribute(value, emailVal);
-
-        selectElm.append(optionElm);
-
+        selectElm.appendChild(optionElm);
     }
 
 }
@@ -72,7 +68,6 @@ function addEmail() {
 // ON SUBMIT BUTTON CLICK RUN ADD EMAIL
 
 submitEmail.addEventListener('click', (event) => {
-    // event.preventDefault();
     addEmail();
 });
 
@@ -85,10 +80,10 @@ const validateEmail = (email) => {
     return email.match(
       /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
     );
-  };
+};
   
 
 //===========================================//
 //     ADD IMAGE TO A EMAIL COLLECTION
 //===========================================//
-
+const emailsArr = [];

@@ -40,15 +40,15 @@ body button:hover {
   color: #fff;
   text-decoration: none;
 }
+.nav-bar a:hover {
+  text-decoration: underline;
+}
 .nav-bar ul {
   margin: 0;
   padding: 0;
 }
 .nav-bar ul li {
   list-style: none;
-}
-.nav-bar span a:hover {
-  text-decoration: underline;
 }
 
 #main {

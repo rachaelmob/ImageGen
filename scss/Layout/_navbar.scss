@@ -21,6 +21,7 @@
     a {
         color: #fff;
         text-decoration: none;
+        &:hover {text-decoration: underline;}
     }
     
     ul {
@@ -32,9 +33,4 @@
         }
     }
 
-    span  {
-        a {
-            &:hover {text-decoration: underline;}
-        }
-    }
 }
