@@ -164,7 +164,7 @@ let imgToEmailArr = [];// Empty array to store images associated with emails
         displayCollection(email);
     }
 
-    // When dropdown option for email is changed, display images for the email selected
+    // display selected
     selectElm.addEventListener("change", () => {
         const selectedEmail = selectElm.value;
         displayCollection(selectedEmail);
