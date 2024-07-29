@@ -53,10 +53,13 @@ body button:hover {
 
 #main {
   padding: 0 20px;
+  padding-bottom: 50px;
+  background: linear-gradient(to top, #ffffff, #b3b6b9);
 }
 #main h1 {
+  margin: 0;
   text-align: center;
-  margin-top: 50px;
+  padding-top: 50px;
 }
 #main .Generator {
   display: flex;
