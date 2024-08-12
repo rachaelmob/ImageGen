@@ -114,12 +114,12 @@ let imgToEmailArr = [];// Empty array to store images associated with emails
         
 
             // Check if the image has already been added for the selected email
-            if (!imgToEmailArr.some(item => item.email === selectedEmail && item.Imgurl === url)) {
+            if (!imgToEmailArr.some(item => item.email === selectedEmail && item.imgURL === url)) {
 
                 //Users email and img object
                 const imgEmail = {
                     email: selectedEmail,
-                    Imgurl: url
+                    imgURL: url
                 };
                 imgToEmailArr.push(imgEmail);
                 displayCollection(selectedEmail);
